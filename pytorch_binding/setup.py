@@ -24,7 +24,7 @@ else:
 headers = ['src/cpu_binding.h']
 
 if enable_gpu:
-    extra_compile_args += ['-DWARPCTC_ENABLE_GPU']
+    extra_compile_args += ['-DWARPCTC_ENABLE_GPU', '-I' + os.path.join(os.environ['CUDA_HOME'], 'include')]
     headers += ['src/gpu_binding.h']
 
 if "WARP_CTC_PATH" in os.environ:
